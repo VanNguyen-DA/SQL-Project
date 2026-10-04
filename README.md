@@ -5,129 +5,142 @@
 
 ---
 
-# Table of Contents
+## 📑 Table of Contents
 
-- Background & Overview
-- Dataset Description & Data Structure
-- Analysis Process
-- Final Conclusion & Recommendations
-
----
-
-# Background & Overview
-
-## What is this project about?
-
-This project analyzes the Google Analytics E-commerce dataset stored in Google BigQuery to evaluate website performance, user engagement, purchase behavior, and revenue generation.
-
-Using SQL, the analysis transforms raw web analytics data into meaningful business insights by examining key e-commerce metrics such as traffic volume, bounce rates, conversion rates, revenue contribution, customer purchasing patterns, and product performance. The project also investigates the customer journey from product view to purchase, helping identify opportunities to improve conversion and overall business growth. 【1-0c6f6d】
-
-## Business Questions
-
-The analysis addresses the following business questions:
-
-1. How did website traffic perform in terms of visits, pageviews, and transactions?
-2. Which traffic sources generated the highest bounce rates?
-3. Which marketing channels contributed the most revenue?
-4. Which traffic sources achieved the best conversion rates?
-5. How does browsing behavior differ between purchasers and non-purchasers?
-6. How frequently do customers make transactions after purchasing?
-7. Which device categories contribute the most revenue?
-8. Which products are commonly purchased together?
-9. How effective is the conversion funnel from product view to add-to-cart and purchase?
-10. How does revenue accumulate over time?
-
-These insights support data-driven decisions related to marketing optimization, customer engagement, conversion improvement, and revenue growth. 【1-0c6f6d】
-
-## Who is this project for?
-
-- Data Analysts
-- Business Analysts
-- Marketing Analysts
-- E-commerce Managers
-- Data Science Students
-- Anyone seeking hands-on experience with SQL and BigQuery
+- #-background--overview
+- #-dataset-description--data-structure
+- #️-main-process
+- [-final-conclusion--recommendations
 
 ---
 
-# Dataset Description & Data Structure
+# 📌 Background & Overview
 
-## Data Source
+## 📖 What is this project about?
 
-The dataset is based on the Google Analytics Sample E-commerce data available in BigQuery Public Datasets. It contains website session data from the Google Merchandise Store, including visitor activity, traffic acquisition channels, product interactions, transactions, and revenue information. 【1-0c6f6d】
+This project analyzes the **Google Analytics Sample E-commerce Dataset** using **SQL in Google BigQuery** to evaluate website performance, customer engagement, purchasing behavior, and revenue generation. The analysis transforms raw session-level data into actionable business insights that support marketing optimization and revenue growth. 【1-39c134】【2-773886】
 
-## Dataset
+## ❓ Business Questions
+
+This project aims to answer the following key business questions:
+
+✔️ How did website traffic perform in terms of **visits, pageviews, and transactions**?
+
+✔️ Which traffic sources generated the highest **bounce rates** and conversion performance?
+
+✔️ Which marketing channels contributed the most **revenue**?
+
+✔️ How does user engagement differ between **purchasers and non-purchasers**?
+
+✔️ How frequently do customers make repeat purchases?
+
+✔️ Which devices contribute the most revenue?
+
+✔️ What products are commonly purchased together?
+
+✔️ How effective is the customer journey from **product view → add to cart → purchase**?
+
+✔️ How does revenue accumulate over time?
+
+These insights help businesses improve acquisition strategies, optimize conversion funnels, and increase customer value. 【1-39c134】【2-773886】
+
+## 👤 Who is this project for?
+
+✔️ Data Analysts & Business Analysts
+
+✔️ E-commerce Managers
+
+✔️ Digital Marketing Teams
+
+✔️ Product & Growth Teams
+
+✔️ Business Intelligence Professionals
+
+✔️ Students learning SQL and BigQuery
+
+---
+
+# 📂 Dataset Description & Data Structure
+
+### 📌 Data Source
+
+The dataset comes from the **Google Analytics Sample Dataset** publicly available in **Google BigQuery**. It contains session-level data from the **Google Merchandise Store**, including website traffic, user interactions, transactions, products, and revenue information. 【1-39c134】
+
+### 📌 Dataset
 
 ```sql
 bigquery-public-data.google_analytics_sample.ga_sessions_*
 ```
 
-## Key Fields
+### 📌 Key Fields
 
 | Field | Description |
 |---------|-------------|
-| fullVisitorId | Unique visitor identifier |
+| fullVisitorId | Unique user identifier |
 | date | Session date |
-| trafficSource.source | Traffic acquisition source |
+| trafficSource.source | Acquisition source |
 | totals.visits | Number of visits |
 | totals.pageviews | Number of pageviews |
 | totals.transactions | Number of transactions |
 | totals.bounces | Bounce sessions |
-| device.deviceCategory | Device category (Desktop, Mobile, Tablet) |
+| device.deviceCategory | Desktop, Mobile, Tablet |
 | hits.product.v2ProductName | Product name |
 | hits.product.productRevenue | Product revenue |
 | hits.product.productQuantity | Purchased quantity |
-| hits.eCommerceAction.action_type | User interaction stage in purchase funnel |
 
-The dataset contains nested and repeated fields, requiring the use of BigQuery's `UNNEST()` function to analyze product-level and event-level data. 【1-0c6f6d】
+The dataset contains nested structures and arrays, requiring the use of **UNNEST()** to analyze product-level and transaction-level data. 【1-39c134】
 
-## How to Access the Dataset
+### 📌 Skills Demonstrated
 
-1. Log in to Google Cloud Platform.
-2. Create or select a BigQuery project.
-3. Open BigQuery Console.
-4. Search for:
-
-```sql
-bigquery-public-data.google_analytics_sample
-```
-
-5. Explore the `ga_sessions_*` tables and begin querying.
+- SQL Querying
+- Data Aggregation
+- Common Table Expressions (CTEs)
+- Window Functions
+- Cohort Analysis
+- Funnel Analysis
+- Customer Behavior Analysis
+- Revenue Analysis
+- BigQuery UNNEST Operations
 
 ---
 
-# Analysis Process
+# ⚒️ Main Process
 
-The project is organized into a series of SQL analyses, with each section including:
+The analysis consists of 10 SQL business scenarios:
 
-- Business Question
+1. Traffic Performance Analysis
+2. Bounce Rate Analysis
+3. Revenue by Traffic Source
+4. Conversion Rate Analysis
+5. Purchaser vs Non-Purchaser Comparison
+6. Average Transactions per Purchasing User
+7. Revenue Contribution by Device
+8. Product Affinity Analysis
+9. Purchase Funnel (View → Cart → Purchase)
+10. Weekly & Cumulative Revenue Analysis
+
+For each scenario, the project includes:
+
+- Business Objective
 - SQL Query
-- Query Result
+- Query Output
 - Key Findings
 
-The analysis covers:
-
-- Traffic Performance Analysis
-- Bounce Rate Analysis
-- Revenue Analysis
-- Conversion Analysis
-- Customer Behavior Analysis
-- Device Performance Analysis
-- Product Affinity Analysis
-- Conversion Funnel Analysis
-- Revenue Trend Analysis
-
-Each query is designed to answer a specific business question and generate actionable insights from e-commerce data. 【1-0c6f6d】
-
 ---
 
-# Final Conclusion & Recommendations
+# 🔎 Final Conclusion & Recommendations
 
-The final section summarizes findings from all analyses and translates them into business recommendations.
+The final section summarizes business insights and provides actionable recommendations derived from the analysis.
 
 | Aspect | Insight | Recommendation |
 |----------|----------|---------------|
-| Traffic Performance | Identify
+| Traffic Performance | Understand website growth and engagement trends | Focus on channels driving quality traffic |
+| Conversion Performance | Identify high-converting traffic sources | Optimize marketing budget allocation |
+| Customer Behavior | Compare purchasers and non-purchasers | Improve engagement strategies for potential buyers |
+| Revenue Contribution | Measure revenue by source and device | Prioritize top-performing channels and devices |
+| Product Affinity | Discover products frequently purchased together | Implement cross-selling and bundle promotions |
+| Purchase Funnel | Identify drop-off points in customer journey | Optimize product pages and checkout process |
+| Revenue Growth | Track revenue trends over time | Support forecasting and business planning |
 
 Ecommerce Web Performance & Purchase Behavior Analysis | SQL, BigQuery
 
