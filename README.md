@@ -1,5 +1,7 @@
 # Ecommerce Web Performance & Purchase Behavior Analysis | SQL, BigQuery
 
+<img width="950" height="570" alt="image" src="https://github.com/user-attachments/assets/fdad4a87-135e-4af8-9184-d8a53b14d64d" />
+
 **Author:** Nguyen Thi Thanh Van  
 **Tools:** SQL, Google BigQuery
 
@@ -7,18 +9,18 @@
 
 ## 📑 Table of Contents
 
-- #-background--overview
-- #-dataset-description--data-structure
-- #️-main-process
-- [-final-conclusion--recommendations
+- Background Overview
+- Dataset Description & Data Structure
+- Analysis process
+- Final Conclusion & Recommendations
 
 ---
 
 # 📌 Background & Overview
 
-## 📖 What is this project about?
+## What is this project about?
 
-This project analyzes the **Google Analytics Sample E-commerce Dataset** using **SQL in Google BigQuery** to evaluate website performance, customer engagement, purchasing behavior, and revenue generation. The analysis transforms raw session-level data into actionable business insights that support marketing optimization and revenue growth. 【1-39c134】【2-773886】
+This project analyzes the **Google Analytics Sample E-commerce Dataset** using **SQL in Google BigQuery** to evaluate website performance, customer engagement, purchasing behavior, and revenue generation. The analysis transforms raw session-level data into actionable business insights that support marketing optimization and revenue growth.
 
 ## ❓ Business Questions
 
@@ -42,7 +44,7 @@ This project aims to answer the following key business questions:
 
 ✔️ How does revenue accumulate over time?
 
-These insights help businesses improve acquisition strategies, optimize conversion funnels, and increase customer value. 【1-39c134】【2-773886】
+These insights help businesses improve acquisition strategies, optimize conversion funnels, and increase customer value.
 
 ## 👤 Who is this project for?
 
@@ -56,21 +58,34 @@ These insights help businesses improve acquisition strategies, optimize conversi
 
 ✔️ Business Intelligence Professionals
 
-✔️ Students learning SQL and BigQuery
-
 ---
 
 # 📂 Dataset Description & Data Structure
 
-### 📌 Data Source
+### Data Source
 
-The dataset comes from the **Google Analytics Sample Dataset** publicly available in **Google BigQuery**. It contains session-level data from the **Google Merchandise Store**, including website traffic, user interactions, transactions, products, and revenue information. 【1-39c134】
+The dataset comes from the **Google Analytics Sample Dataset** publicly available in **Google BigQuery**. It contains session-level data from the **Google Merchandise Store**, including website traffic, user interactions, transactions, products, and revenue information.
 
-### 📌 Dataset
+### Dataset
 
-```sql
-bigquery-public-data.google_analytics_sample.ga_sessions_*
-```
+```ga4_obfuscated_sample_ecommerce```
+
+### How to access data
+
+### 📌 How to Access the Dataset
+
+1. Log in to your **Google Cloud Platform** account and create a new project.
+2. Open the **BigQuery Console** and select your project.
+3. Click **Add Data** in the navigation panel, then choose **Search a project**.
+4. Enter the following dataset in the search bar:
+
+```bigquery-public-data.google_analytics_sample.ga_sessions```
+
+5. Open the dataset and explore the tables:
+
+```ga_sessions_```
+
+6. Start querying the data using BigQuery SQL.
 
 ### 📌 Key Fields
 
@@ -88,7 +103,7 @@ bigquery-public-data.google_analytics_sample.ga_sessions_*
 | hits.product.productRevenue | Product revenue |
 | hits.product.productQuantity | Purchased quantity |
 
-The dataset contains nested structures and arrays, requiring the use of **UNNEST()** to analyze product-level and transaction-level data. 【1-39c134】
+The dataset contains nested structures and arrays, requiring the use of **UNNEST()** to analyze product-level and transaction-level data.
 
 ### 📌 Skills Demonstrated
 
@@ -104,7 +119,7 @@ The dataset contains nested structures and arrays, requiring the use of **UNNEST
 
 ---
 
-# ⚒️ Main Process
+# ⚒️ Analysis Process
 
 The analysis consists of 10 SQL business scenarios:
 
@@ -141,38 +156,3 @@ The final section summarizes business insights and provides actionable recommend
 | Product Affinity | Discover products frequently purchased together | Implement cross-selling and bundle promotions |
 | Purchase Funnel | Identify drop-off points in customer journey | Optimize product pages and checkout process |
 | Revenue Growth | Track revenue trends over time | Support forecasting and business planning |
-
-Ecommerce Web Performance & Purchase Behavior Analysis | SQL, BigQuery
-
-Author: Nguyen Thi Thanh Van
-Tools: SQL
-
-Table of Contents
-Background & Overview
-Dataset Description & Data Structure
-Final Conclusion & Recommendations
-
-Background & Overview
-What is this project about? What Business Question will it solve?
-
-Who is this project for?
-
-Dataset Description & Data Structure
-DataSource: The sample data is from Google Analytics 4 (GA4), exported to BigQuery, including user activity data from the Google Merchandise Store e-commerce website.
-
-Data Size: 
-Dataset: ga4_obfuscated_sample_ecommerce
-
-How to access this data:
-Log in to your Google Cloud Platform account and create a new project.
-Open the BigQuery Console and select your project.
-Click on "Add Data" in the navigation panel, then choose "Search a project".
-In the search bar, enter the project ID: bigquery-public-data.google_analytics_sample.ga_sessions and press Enter.
-Click on the ga_sessions_ table to explore its structure and data.
-
-Process => answer each question in excel file
-explain each question and give querries and result after queries
-
-Give Final Conclusion & Recommendation
-
-Aspect | Insight | Recommendation
